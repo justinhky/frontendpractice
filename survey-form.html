@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin's survey form</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2rem;
+            line-height: 2.5rem;
+            text-align: center;
+            color: royalblue;
+            margin: 0;
+        }
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0;
+        }
+        @media (max-width: 460px) {
+            h1 {
+                font-size: 3.5rem;
+                line-height: 2.3rem;
+            }
+        }
+        
+        #main {
+            margin: 30px 8px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: pink;
+        }
+        @media (max-width:460px) {
+           #main {
+               margin: 0;
+           }
+        }
+        #survey-div {
+max-width: 500px;
+margin: 0 auto;
+display: block;
+        }
+        fieldset {
+           width: 90%;
+           margin: 20px 5px;
+        }
+        @media (max-width: 460px) {
+
+        }
+    </style>
+</head>
+
+<body>
+<main id="main">
+    <h1 id="title">Justin's Survey-Form Page</h1>
+    <p id="description">Justin's survey form page is make on April, 13, 2021. It's a practice on front end programming. It's make all by my own.</p>
+    <div id="survey-div">
+    <form action="" id="survey-form">
+        <fieldset>
+            <legend>Contact:</legend>
+        <label for="name" id="name-label">name:</label><input type="text" id="name" name="name">
+        <br>
+        <label for="email" id="email-label">email:</label><input type="text" id="email" name="email">
+        <br>
+        <label for="number" id="number-label">number:</label><input type="text" id="number" min="10" max="500">
+        <br>
+        </fieldset>
+        <fieldset>
+            <legend>sex:</legend>
+        <input type="radio" name="sex" value="mail"><label for="sex">male</label>
+        <input type="radio" name="sex" value="female"><label for="sex">female</label>
+        <br>
+        <input type="radio" name="city" value="Beijing"><label for="city">Beijing</label>
+        <input type="radio" name="city" value="Guangzhou"><label for="city">Guangzhou</label>
+        </fieldset>
+        <fieldset>
+            <legend>habits:</legend>
+        <input type="checkbox" name="habit" value="swimming"><label for="habit">swimming</label>
+        <input type="checkbox" name="habit" value="football"><label for="habit">football</label>
+        <input type="checkbox" name="habit" value="basketball"><label for="habit">basketball</label>
+        </fieldset>
+
+        <label for="dropdown">choosen</label>
+        <select name="dropdown" id="dropdown">
+            <optgroup label="fruit">
+                <option value="bananas">bananas</option>
+                <option value="apples">apples</option>
+            </optgroup>
+            <optgroup label="course">
+                <option value="math">math</option>
+                <option value="programming">programming</option>
+            </optgroup>
+        </select>
+        <br>
+        <label for="textarea">remarks:</label><br>
+        <textarea name="testarea" id="textarea" cols="30" rows="10"></textarea>
+        <button id="submit">submit</button>
+    </form>
+</div>
+</main>
+</body>
+
+</html>
