@@ -1,0 +1,31 @@
+.container {
+    height: 100%;
+display: grid;
+gap: 5px;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 30px auto auto 30px;
+
+}
+
+.header {
+    background-color: green;
+    grid-column: 1 / 4;
+
+}
+
+.menu {
+    background-color: rgb(235, 109, 25);
+    grid-row: 2 / 4;
+}
+
+.content {
+    background-color: rgb(197, 233, 66);
+    grid-column: 2 / span 2;
+    grid-row: 2 / 4;
+}
+
+.footer {
+    background-color: rgb(219, 152, 27);
+    grid-column: 1 / span 3;
+}
+
