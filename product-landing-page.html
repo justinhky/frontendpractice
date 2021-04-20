@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Landing Page</title>
     <link type="text/css" rel="stylesheet" href="./css/product-landing.css">
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-
-        <div class="main-container">
-            <main class="main">
-                <header id="header" class="header">
-                    <img src="#" alt="header-img" id="header-img">
-                    <div id="nav-bar" class="nav-bar">
-
-                    </div>
-                </header>
-                <div class="content-wrapper">
-                    <div class="email-div"></div>
-                    <div class="features"></div>
-                    <div class="video-wrapper"></div>
-                </div>
-                <footer class="footer"></footer>
-            </main>
+      <main class="main">
+        <header id="header" class="header">
+          <div class="header-img">
+            <img src="./image/diaochan1.jpg" alt="header-img" id="header-img">
+          </div>
+          <div id="nav-bar" class="nav-bar">
+            <div>Features</div>
+            <div>How it works</div>
+            <div>pricing</div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <h1>Handcrafted, home-made masterpieces</h1>
+          <div class="email-div">
+            <form id="form">
+              <input type="email" name="user-email" id="email" placeholder="please enter your email">
+              <button type="button" name="get-started">Get Started</button>
+            </form>
+          </div>
+          <div class="features-div">
+            <img src="#" alt="premium-materials">
+            <p>Premium Materials
+              Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+          </div>
+          <div class="features-div">
+            <img src="#" alt="fast-shipping">
+            <p>Fast Shipping
+              We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+          </div>
+          <div class="features-div">
+            <img src="#" alt="quality-assurance">
+            <p>Quality Assurance
+              For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+          </div>
+          <div class="video-div">
+            <video id="video" src="movie.ogg" controls height="300px" width="300px">
+          </div>
+          <div class="pricing-div">
+            <div>
+              <p>TENOR TROMBONE</p>
+              <p>$600</p>
+              <p>Lorem ipsum dolor sit amet, consectetur elit</p>
+            </div>
+            <div>
+              <p>BASS TROMBONE</p>
+              <p>$900</p>
+              <p>Lorem ipsum dolor sit amet, consectetur elit</p>
+            </div>
+            <div>
+              <p>VALVE TROMBONE</p>
+              <p>$1200</p>
+              <p>Lorem ipsum dolor sit amet, consectetur elit</p>
+            </div>
+          </div>
+          </video>
         </div>
-
+        <footer class="footer"></footer>
+      </main>
     </div>
-</body>
+  </body>
 
 </html>
