@@ -20,6 +20,11 @@
         font-size: 1.6rem;
         line-height: 3rem;
       }
+
+      dd {
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
 
@@ -81,18 +86,23 @@
               </dl>
             </section>
             <section>
-              <h2>行内标签</h2>
+              <h2>HTML Formatting Elements文本格式化标签</h2>
               <dl>
                 <dt>span标签</dt>
                 <dd>将某些特殊的文本内容加上容器，用来作进一步CSS样式设计</dd>
-                <dt>strong标签</dt>
-                <dd>
-                  加粗文本，跟b标签功能类似，但是b标签是老式标签，没有语义作用，尽量用strong标签代替
-                </dd>
-                <dt>em标签</dt>
-                <dd>
-                  强调某些文本，浏览器会进行斜体显示，跟i标签功能类似，但是i标签也没有语义作用，所以尽量用em标签代替
-                </dd>
+                <dt>strong标签-b标签</dt>
+                <dd>加粗文本，跟b标签功能类似，但是b标签是老式标签，没有语义作用，尽量用strong标签代替</dd>
+                <dt>em标签-i标签</dt>
+                <dd>强调某些文本，浏览器会进行斜体显示，跟i标签功能类似，但是i标签也没有语义作用，所以尽量用em标签代替</dd>
+                <dt>small标签</dt>
+                <dt>mark标签</dt>
+                <dt>del标签</dt>
+                <dd>文本显示删除线</dd>
+                <dt>ins标签</dt>
+                <dt>sub标签</dt>
+                <dd>文本下标显示</dd>
+                <dt>sup标签</dt>
+                <dd>文本上标显示</dd>
               </dl>
             </section>
 
@@ -106,12 +116,20 @@
               <dd>这个区域块的作用是用来设置整体css样式，同时区分开body标签，因为有时候存在头部、主体内容和尾部内容等情况。</dd>
             </section>
             <section>
-              <h3>经常碰到的实用css属性</h3>
-              <ul>
-                <li>box-sizing: border-box;</li>
-                <li></li>
-                <li></li>
-              </ul>
+              <h3>经常碰到的实用css属性及使用说明</h3>
+              <dt>box-sizing: border-box;</dt>
+              <dt>width, height, min-width/max-width, min-height/max-width</dt>
+              <dd>width和height设定的是content-box的值，不包含paddings, borders, margins。同时min/max-width/height会覆盖width和height的值。</dd>
+              <dd>
+                <ul>
+                  <li>auto: 默认值，浏览器计算数值；</li>
+                  <li>length:以长度单位规定的值，比如px, cm, em, rem, etc.</li>
+                  <li>%:百分比值，以包含块的百分比计算数值；</li>
+                  <li>initial: 设置为默认值；</li>
+                  <li>inherit: 从父元素继承值；</li>
+                </ul>
+              </dd>
+              <dt></dt>
             </section>
             <section>
               <h3>css layout</h3>
@@ -120,7 +138,8 @@
                 <h5>设置全局元素样式global element styling</h5>
                 <p>可以在这里控制网页字体以及margin, padding, backgroud-color, font-family, font-size, box-sizing等，比如：
 
-                <pre>  @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+                <pre>
+                  @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
                   * {
                   margin: 0;
                   padding: 0;
