@@ -1,0 +1,19 @@
+
+    BODY {
+    background: #9c9f84;
+    margin: 0px;
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 10px;
+    }
+   
+   #header {
+   	background-color: #5c755e;
+   	margin: 10px;
+   	height: 90px;
+   }
+    
+    #navbar {
+   	background-color: #5c755e;
+   	margin: 10px;
+   	height: 35px;
+   }
