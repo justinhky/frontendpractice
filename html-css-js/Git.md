@@ -228,36 +228,58 @@ git branch
 ```
 
 3. 删除分支
-```git branch -d  name```
+```
+git branch -d  name
+```
 
 4. 合并指定分支到当前分支  
-```git merge  ```
+```
+git merge  
+```
 
 5. 查看分支合并图
-```git log --graph ``` 
+```
+git log --graph 
+``` 
 
 6. 创建并切换分支
-```git switch -c  ```
+```
+git switch -c  
+```
 
 7. 合并分支
-```git merge --no-ff -m "merge with no-ff" dev  //on-ff表示禁用fast forward  ```
+```
+git merge --no-ff -m "merge with no-ff" dev  //on-ff表示禁用fast forward  
+```
 
 8. 临时存储分支，可以后续接着工作
-```git stash ``` 
+```
+git stash 
+``` 
 
 9. 查看存储的分支
-```git stash list  ```
+```
+git stash list  
+```
 
 10. 强行删除分支
-```git branch -D name ``` 
+```
+git branch -D name
+``` 
 
 11. 创建远程库的分支到本地
-```git checkout -b dev origin/dev```
+```
+git checkout -b dev origin/dev
+```
 
 12. 同步远程库分支到本地 
-```git pull  ```
+```
+git pull
+```
  
-```git pull rebase  ```
+```
+git pull rebase
+```
 把远程库中的跟新合并到本地库中（可能存在冲突需要解决），--rebase的作用是取消本地库中刚刚提交的commit，并把他们接到更新后的版本库中。
 
 
