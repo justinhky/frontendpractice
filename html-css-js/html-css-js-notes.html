@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML, CSS, Javascript Notes</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.6rem;
+        line-height: 3rem;
+      }
+
+      dd {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div id="main-content-wrapper" class="page-wrapper document-page">
+        <header>
+          <ul>
+            <li><a href="#html-notes">HTML</a></li>
+            <li><a href="#css-notes">CSS</a></li>
+            <li><a href="#js-notes">Javascript</a></li>
+          </ul>
+        </header>
+        <div class="breadcrumbs-container"></div>
+        <aside class="content-table"></aside>
+        <main id="main" class="main-content">
+          <article class="main-page-content">
+            <h1>前端学习笔记</h1>
+            <h2 id="html-notes" class="html-notes">HTML</h2>
+            <h3 id="html-typeset" class="html-typeset">HTML排版</h3>
+            <div>
+              <p class="notecard">
+                <strong>Note:</strong>排版是我个人杜撰的名字，实际可能并没有这个专题，但是在学习过程中我发现我写的代码结构混乱，读起来非常费劲，主要的原因还是不熟悉网页结构和html标签使用场景。
+              </p>
+              <dl>
+                <dt>区域化标签&lt;div&gt;</dt>
+                <dd>在写html代码过程中，我发现了一个很重要的概念——网页区域。任何一个网页都是程序员思维的体现，逻辑清晰的程序员写出来的网页结构也很清晰，他们会把网页分割成一个个的网页区域，然后在网页区域中进行内容填充。
+                  通常的习惯是通过&lt;div&gt;标签进行模块化。
+                </dd>
+                <dt>语义化标签</dt>
+                <dd>
+                  语义化标签是html的发展精神，严格意义上来说，所有html标签都应该是是语义化的标签。但是我单独放到这个部分来讲是基于自己对网页结构的理解，
+                  发现语义化标签特别适合对分区域的网页进行标注，因为它能更清晰的告诉浏览器这个区域的内容跟什么相关。关于这点，在css分类或ID命名中也是这个思路。
+                </dd>
+                <dt>网页资源类标签</dt>
+                <dd>这里的"网页资源"只是狭义的代指“网页上展现出来的各种元素的集合，这也是我<span class="clue">个人定义</span>，不具备普遍性。它包含所有文本标签、图片标签、表单标签、url标签等。
+                </dd>
+              </dl>
+            </div>
+            <section>
+              <h3>一些重要的概念</h3>
+              <dl>
+                <dt>文档流</dt>
+                <dd>mark</dd>
+                <dt>调用</dt>
+                <dd>mark</dd>
+                <dt>引用</dt>
+                <dd>mark</dd>
+                <dt>包含快</dt>
+                <dd>mark</dd>
+                <dt>框模型及display属性</dt>
+                <dd>
+                  初期我们了解到的框模型大多是默认的，但是框模型其实有很多种，在实际应用中非常广泛，需要详细掌握。
+                  例如，常见display:block, inline, inline-block;不常见display:table,
+                  flex, grid。
+                  另外，box-sizing属性也非常重要，它的值有box-sizing:border-box,
+                  padding-box, content-box。
+                </dd>
+              </dl>
+            </section>
+            <section>
+              <h2>HTML Formatting Elements文本格式化标签</h2>
+              <dl>
+                <dt>span标签</dt>
+                <dd>将某些特殊的文本内容加上容器，用来作进一步CSS样式设计</dd>
+                <dt>strong标签-b标签</dt>
+                <dd>加粗文本，跟b标签功能类似，但是b标签是老式标签，没有语义作用，尽量用strong标签代替</dd>
+                <dt>em标签-i标签</dt>
+                <dd>强调某些文本，浏览器会进行斜体显示，跟i标签功能类似，但是i标签也没有语义作用，所以尽量用em标签代替</dd>
+                <dt>small标签</dt>
+                <dt>mark标签</dt>
+                <dt>del标签</dt>
+                <dd>文本显示删除线</dd>
+                <dt>ins标签</dt>
+                <dt>sub标签</dt>
+                <dd>文本下标显示</dd>
+                <dt>sup标签</dt>
+                <dd>文本上标显示</dd>
+              </dl>
+            </section>
+
+          </article>
+
+          <article>
+            <h2 id="css-notes" class="css-notes">CSS</h2>
+            <section>
+              <h3 id="css-names" class="css-names">User Defined CSS classes/id Names</h3>
+              <dt>body标签下的第一个子区域块用“root”作属性或者id名</dt>
+              <dd>这个区域块的作用是用来设置整体css样式，同时区分开body标签，因为有时候存在头部、主体内容和尾部内容等情况。</dd>
+            </section>
+            <section>
+              <h3>经常碰到的实用css属性及使用说明</h3>
+              <dt>box-sizing: border-box;</dt>
+              <dt>width, height, min-width/max-width, min-height/max-width</dt>
+              <dd>width和height设定的是content-box的值，不包含paddings, borders, margins。同时min/max-width/height会覆盖width和height的值。</dd>
+              <dd>
+                <ul>
+                  <li>auto: 默认值，浏览器计算数值；</li>
+                  <li>length:以长度单位规定的值，比如px, cm, em, rem, etc.</li>
+                  <li>%:百分比值，以包含块的百分比计算数值；</li>
+                  <li>initial: 设置为默认值；</li>
+                  <li>inherit: 从父元素继承值；</li>
+                </ul>
+              </dd>
+              <dt></dt>
+            </section>
+            <section>
+              <h3>css layout</h3>
+              <h4>css布局步骤</h4>
+              <div>
+                <h5>设置全局元素样式global element styling</h5>
+                <p>可以在这里控制网页字体以及margin, padding, backgroud-color, font-family, font-size, box-sizing等，比如：
+
+                <pre>
+                  @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+                  * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  }
+
+                  body {
+                  background-color: #eee;
+                  font-family: 'Lato', sans-serif;
+                  }
+                </pre>
+                </p>
+              </div>
+              <section>
+                <h5>设置全局类属性样式global classes styling</h5>
+              </section>
+              <h4>排列元素的方法</h4>
+              <div>
+                <h5>vertically center any text content code</h5>
+                <pre>
+                  /* ===center the text in any situation=== */
+                  position: relative;
+                  top: 50%;
+                  -webkit-transform: translateY(-50%);
+                  -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+                </pre>
+              </div>
+
+            </section>
+          </article>
+
+          <article>
+            <h2 id="js-notes" class="js-notes">Javascript</h2>
+          </article>
+
+        </main>
+        <footer>&copy; 2021-3-21 Justin</footer>
+      </div>
+  </body>
+
+</html>
