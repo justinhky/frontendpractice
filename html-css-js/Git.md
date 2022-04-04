@@ -49,13 +49,14 @@ pwd
 ```
 mkdir  //创建一个空目录  
 ```
-3.  创建初始化仓库
+3.  创建初始化仓库  
 ```
 git init  
 ```
 把这个目录变成git可以管理的仓库，这个步骤很重要，务必使用一个空白目录，只有先创建了git目录，
 下面的工作才可以开展，因为我第一次就直接用命令，结果一直提示没有可以用的仓库，就是这个原因导致的。  
-4.  显示仓库文件
+
+4.  显示仓库文件  
 ```  
 ls //参数：-ah  
 dir
@@ -65,74 +66,131 @@ ls和dir都可以显示当前目录文件，-ah参数表示同时显示隐藏文
 
 ### git add提交和管理修改  
 git add的目的是将修改文件由工作区提交到暂存区，可以多次提交或者一次提交多个文件，常用语法有如下  
-- git add file1  
+```
+git add file1  
+```
 添加一个文件，git add添加修改到缓存区，可以一次添加多个文件或者多次添加  
 
-- git add file1 file2 file3...  
+```
+git add file1 file2 file3...  
+```
 添加多个文件，中间用空格隔开  
 
-- git config/*  
+```
+git config/*  
+```
 config目录下及子目录下所有文件
-- git home/*.php  
+
+```
+git home/*.php  
+```
 添加home目录下的所有.php文件  
 
-- git add . 或者git add --all  
-git add . 添加所有的文件， 或者 git add --all 添加所有的文件
+```
+git add . 或者git add --all  
+```
+添加所有的待提交的文件
 
-- git add 文件夹名  
-git add 文件夹
+```
+git add <categoryName1>  
+```
+添加文件夹
 
-- git commit 参数：-m  
+```
+git commit -m 
+```
 git commit表示将文件提交到仓库，-m表示为本次提交添加说明  
 
-- git checkout -- filename（必须要--，要不然命令变成切换分支了）  
-把readme.txt文件在工作区的修改全部撤销，就是让这个文件回到最近一次git commit或git add时的状态。  
+```
+git checkout -- filename //（必须要--，要不然命令变成切换分支了）  
+```
+把filename文件在工作区的修改全部撤销，就是让这个文件回到最近一次git commit或git add时的状态。  
 
 
 ### Git查询命令
-- git status  
-查看当前仓库的状态  
+```
+git status  
+```
+查看当前仓库的状态 
+
 ```
 git status -uno, 不显示未跟踪的文件(git status --untracked-files=no)
 ```
-- git fetch origin
+```
+git fetch origin
+```
 update the remote branch in your repository to point to the latest version.
-- git diff  
+
 查询最近的修改
-- git diff head -- file_name  
+```
+git diff  
+git diff head -- file_name  
+```
+
 查看工作区和版本库最新版本的差别
+
 ```
 git diff origin/master, 或者 git diff head origin/master
 //if you want to accept the remote changes, apply:
 git merge origin/master
 ```
-- git log  参数：--pretty=oneline  
+
+```
+git log
+```
 查看每一次的提交日志，参数--pretty=oneline表示逐行显示  
-- git reflog  
+
+```
+git reflog  
+```
 查看每一次的命令历史日志
 
 
 ### Git回退
-- git reset  
+1. 回退
+```
+git reset  
+```
 git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。  
-git reset不会产生commit，它仅仅更新一个branch指向另外一个commit。  
-- git reset --hard HEAD^  
-返回上一个版本  
-- git reset --hard commit_id  
-返回指定commit_id的版本  
-- git revert  
-撤销  
-- 未使用git add 缓存代码时  
-git checkout -- filepathname  
-git check out . 放弃所有文件修改  
-此命令用来放弃掉所有还没有加入到缓存区(就是 git add 命令)的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。  
-- 已经使用git add缓存了的代码  
+git reset不会产生commit，它仅仅更新一个branch指向另外一个commit。 
+
+2. 返回上一个版本 
+```
+git reset --hard HEAD^  
+```
+
+3. 返回指定commit_id的版本
+```
+git reset --hard commit_id  
+```
+
+4. 撤销  
+```
+git revert  
+```
+
+4.1 未使用git add 缓存代码时  
+```
+git checkout -- filepathname  //放弃单个文件的修改
+git check out . //放弃所有文件的修改  
+```
+此命令用来放弃掉所有还没有加入到缓存区(就是 git add 命令)的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。
+
+4.2 已经使用git add缓存了的代码  
+```
 git reset HEAD filepathname  
-比如: git reset HEAD readme.md  
-- 已经使用 git commit提交了代码  
+```
+比如: git reset HEAD readme.md 
+
+4.3 已经使用 git commit提交了代码  
+```
 git reset --hard HEAD^ 回退到上一次commit的状态  
-- git reset --hard  commitid  
-此命令可以用来回退到任意版本  
+```
+
+4.4 回退到任意版本
+```
+git reset --hard  commitid  
+```  
 你可以使用 git log 命令来查看git的提交历史  
 
 
@@ -157,33 +215,49 @@ git rm -r <filename1>
 
 
 ### 管理分支
-- git checkout -b branch_name  
--b参数表示创建并切换到一个新的分支，相当于下面两个命令  
-- git branch dev  
-- git checkout dev  
-- git branch  
-可以查看当前分支
-- git branch -d  name
-删除分支
-- git merge  
-合并指定分支到当前分支  
-- git log --graph  
-查看分支合并图
-- git switch -c  
-创建并切换分支  
-- git merge --no-ff -m "merge with no-ff" dev  
---on-ff表示禁用fast forward  
-- git stash  
-临时存储分支，可以后续接着工作  
-- git stash list  
-查看存储的分支
-- git branch -D name  
-强行删除分支  
-- git checkout -b dev origin/dev
-创建远程库的分支到本地
-- git pull  
-同步远程库分支到本地  
-- git pull rebase  
+1. 创建并切换新分支
+```
+git checkout -b branch_name  //b参数表示创建并切换到一个新的分支，相当于下面两个命令 
+git branch dev  
+git checkout dev  
+```
+
+2. 查看当前分支
+```
+git branch  
+```
+
+3. 删除分支
+```git branch -d  name```
+
+4. 合并指定分支到当前分支  
+```git merge  ```
+
+5. 查看分支合并图
+```git log --graph ``` 
+
+6. 创建并切换分支
+```git switch -c  ```
+
+7. 合并分支
+```git merge --no-ff -m "merge with no-ff" dev  //on-ff表示禁用fast forward  ```
+
+8. 临时存储分支，可以后续接着工作
+```git stash ``` 
+
+9. 查看存储的分支
+```git stash list  ```
+
+10. 强行删除分支
+```git branch -D name ``` 
+
+11. 创建远程库的分支到本地
+```git checkout -b dev origin/dev```
+
+12. 同步远程库分支到本地 
+```git pull  ```
+ 
+```git pull rebase  ```
 把远程库中的跟新合并到本地库中（可能存在冲突需要解决），--rebase的作用是取消本地库中刚刚提交的commit，并把他们接到更新后的版本库中。
 
 
