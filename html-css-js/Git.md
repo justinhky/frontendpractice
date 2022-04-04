@@ -9,43 +9,58 @@
 ## Git概念和原理
 Git是分布式版本控制系统Distributed Vernsion Control System，他有一个核心的逻辑是，Git跟踪并管理的是“修改”。
 Git分为三个区域：  
-- 工作区working directory，就是你建立的文件夹目录
-- 版本库repository  
+1. 工作区working directory，就是你建立的文件夹目录
+2. 版本库repository  
     - stage暂存区  
     - head指向git创建的第一个master分支  
 master分支是主分支  
-- head指针：git内部的一个指针，指向当前分支版本顶端，也就是在当前分支你最近的一个提交  
+3. head指针：git内部的一个指针，指向当前分支版本顶端，也就是在当前分支你最近的一个提交  
 
 ## 常见注意事项
-- 不要用windows自带的记事本工具编辑文档，会产生编码错误  
+1. 不要用windows自带的记事本工具编辑文档，会产生编码错误  
 
 ## Git常用指令
 ### Git安装
-- Windows  
+1. Windows  
 因为我用的windows，所以只记录windows的，其他版本大家自行学习  
 从官网下载Git程序[git link](https://git-scm.com/downloads)，安装完成后，运行Git-Bash，出现命令行窗口即代表成功。  
 
 
-### 为你的电脑git交互起一个名字和邮箱，便于识别不同用户
+### 为你的电脑git交互起一个名字和邮箱，便于识别不同用户  
+1. 配置电脑用户名  
 安装完成后，还需要最后一步设置，在命令行输入：  
+```  
 $ git config --global user.name "Your Name"  
 $ git config --global user.email "email@example.com"  
-因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。我自己试验了用不同名字不同邮箱是可以的，可能它的主要作用就是用来标识吧，就跟名片类似的感觉  
+```  
+  因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。
+  我自己试验了用不同名字不同邮箱是可以的，可能它的主要作用就是用来标识吧，就跟名片类似的感觉  
 注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。  
-- git config  参数：--global
-见上  
-- pwd  
+```  
+git config  参数：--global  
+```   
+2. 显示当前目录的路径
+```
+pwd  
+```  
 显示当前目录，尽量不要使用中文目录  
-- mkdir  
-创建一个空目录  
-- git init  
+
+2. 创建一个空目录  
+```
+mkdir  //创建一个空目录  
+```
+3.  创建初始化仓库
+```
+git init  
+```
 把这个目录变成git可以管理的仓库，这个步骤很重要，务必使用一个空白目录，只有先创建了git目录，
 下面的工作才可以开展，因为我第一次就直接用命令，结果一直提示没有可以用的仓库，就是这个原因导致的。  
-- ls 参数：-ah  
-- dir
+4.  显示仓库文件
+```  
+ls //参数：-ah  
+dir
+```  
 ls和dir都可以显示当前目录文件，-ah参数表示同时显示隐藏文件  
-- rm和git rm  
-rm可以直接删除工作区的文件，git rm+git commit可以删除版本库中的文件
 
 
 ### git add提交和管理修改  
@@ -91,7 +106,7 @@ git diff origin/master, 或者 git diff head origin/master
 //if you want to accept the remote changes, apply:
 git merge origin/master
 ```
-- git log  参数：--pretty=oneline
+- git log  参数：--pretty=oneline  
 查看每一次的提交日志，参数--pretty=oneline表示逐行显示  
 - git reflog  
 查看每一次的命令历史日志
