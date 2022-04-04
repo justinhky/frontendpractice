@@ -1,6 +1,11 @@
+
 # Git notes
 大家可以去阅读廖雪峰的Git教程，他的教程目的性比较强，就是让你掌握Git的基本用法，我现在的这个目录完全就是照着他的Git教程建起来的。
 我觉得够用了，太高级的功能也不适合我，我只要掌握基本的使用功能足以。
+
+## 文档日志history
+- 20220404：因遗忘翻阅而重新整理了git add相关内容  
+
 ## Git概念和原理
 Git是分布式版本控制系统Distributed Vernsion Control System，他有一个核心的逻辑是，Git跟踪并管理的是“修改”。
 Git分为三个区域：  
@@ -12,13 +17,14 @@ master分支是主分支
 - head指针：git内部的一个指针，指向当前分支版本顶端，也就是在当前分支你最近的一个提交  
 
 ## 常见注意事项
-- 不要用windows自带的记事本工具编辑文档，会产生编码错误
-## Git常用指令
+- 不要用windows自带的记事本工具编辑文档，会产生编码错误  
 
+## Git常用指令
 ### Git安装
 - Windows  
 因为我用的windows，所以只记录windows的，其他版本大家自行学习  
 从官网下载Git程序[git link](https://git-scm.com/downloads)，安装完成后，运行Git-Bash，出现命令行窗口即代表成功。  
+
 
 ### 为你的电脑git交互起一个名字和邮箱，便于识别不同用户
 安装完成后，还需要最后一步设置，在命令行输入：  
@@ -41,25 +47,32 @@ ls和dir都可以显示当前目录文件，-ah参数表示同时显示隐藏文
 - rm和git rm  
 rm可以直接删除工作区的文件，git rm+git commit可以删除版本库中的文件
 
-### git提交和管理修改
-- git add  
-git add添加修改到缓存区，可以一次添加多个文件或者多次添加
-```
-添加多个文件
-git add file_1 file_2 file_3
-git提交文件夹的方法
-git add catalog_name
-添加指定目录下的文件
-git config/*
-git home/*.php
-添加所有文件
-git add .
-git add --all
-```
+
+### git add提交和管理修改  
+git add的目的是将修改文件由工作区提交到暂存区，可以多次提交或者一次提交多个文件，常用语法有如下  
+- git add file1  
+添加一个文件，git add添加修改到缓存区，可以一次添加多个文件或者多次添加  
+
+- git add file1 file2 file3...  
+添加多个文件，中间用空格隔开  
+
+- git config/*  
+config目录下及子目录下所有文件
+- git home/*.php  
+添加home目录下的所有.php文件  
+
+- git add . 或者git add --all  
+git add . 添加所有的文件， 或者 git add --all 添加所有的文件
+
+- git add 文件夹名  
+git add 文件夹
+
 - git commit 参数：-m  
 git commit表示将文件提交到仓库，-m表示为本次提交添加说明  
+
 - git checkout -- filename（必须要--，要不然命令变成切换分支了）  
 把readme.txt文件在工作区的修改全部撤销，就是让这个文件回到最近一次git commit或git add时的状态。  
+
 
 ### Git查询命令
 - git status  
@@ -83,6 +96,7 @@ git merge origin/master
 - git reflog  
 查看每一次的命令历史日志
 
+
 ### Git回退
 - git reset  
 git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。  
@@ -92,7 +106,20 @@ git reset不会产生commit，它仅仅更新一个branch指向另外一个commi
 - git reset --hard commit_id  
 返回指定commit_id的版本  
 - git revert  
-撤销
+撤销  
+- 未使用git add 缓存代码时  
+git checkout -- filepathname  
+git check out . 放弃所有文件修改  
+此命令用来放弃掉所有还没有加入到缓存区(就是 git add 命令)的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。  
+- 已经使用git add缓存了的代码  
+git reset HEAD filepathname  
+比如: git reset HEAD readme.md  
+- 已经使用 git commit提交了代码  
+git reset --hard HEAD^ 回退到上一次commit的状态  
+- git reset --hard  commitid  
+此命令可以用来回退到任意版本  
+你可以使用 git log 命令来查看git的提交历史  
+
 
 ### 管理分支
 - git checkout -b branch_name  
