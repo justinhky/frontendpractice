@@ -215,18 +215,38 @@ git rm -r <filename1>
 
 
 ### 管理分支
-1. 创建并切换新分支
+1. 从远程仓库拉取一条本地不存在的分支并切换到新分支
 ```
-git checkout -b branch_name  //b参数表示创建并切换到一个新的分支，相当于下面两个命令 
+git checkout -b local_branch_name origin/<remote_branchName> //b参数表示创建并切换到一个新的分支，相当于下面两个命令 
 git branch dev  
 git checkout dev  
 ```
-
-2. 查看当前分支
+如果出现如下提示信息，表示拉取不成功:
 ```
-git branch  
+Fatal: Cannot update paths and switch to branch xxx at the same time.
+Did you intend to checkout 'origin/xxx' which can not be resolved as commit?
+```
+此时，我们要先执行
+```
+git fetch
+```
+然后再执行
+```
+git checkout -b local_branchName origin/remote_branchName
 ```
 
+2. 查看，创建和切换分支
+```
+git branch  //查看分支
+git branch <name>  //创建分支
+git checkout <name> 或者 git switch <name>  //切换分支
+```
+
+- 创建并切换分支
+```
+git switch -c  
+```
+----
 3. 删除分支
 ```
 git branch -d  name
@@ -242,37 +262,32 @@ git merge
 git log --graph 
 ``` 
 
-6. 创建并切换分支
-```
-git switch -c  
-```
-
-7. 合并分支
+6. 合并分支
 ```
 git merge --no-ff -m "merge with no-ff" dev  //on-ff表示禁用fast forward  
 ```
 
-8. 临时存储分支，可以后续接着工作
+7. 临时存储分支，可以后续接着工作
 ```
 git stash 
 ``` 
 
-9. 查看存储的分支
+8. 查看存储的分支
 ```
 git stash list  
 ```
 
-10. 强行删除分支
+9. 强行删除分支
 ```
 git branch -D name
 ``` 
 
-11. 创建远程库的分支到本地
+10. 创建远程库的分支到本地
 ```
 git checkout -b dev origin/dev
 ```
 
-12. 同步远程库分支到本地 
+11. 同步远程库分支到本地 
 ```
 git pull
 ```
