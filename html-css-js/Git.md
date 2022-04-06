@@ -219,7 +219,7 @@ on-ff表示禁用fast forward
 git stash  //临时存储分支，可以后续接着工作  
 git stash list  //查看存储的分支
 ```
-9. 删除分支
+9. 删除分支  
 ```
 git branch -D name  //强行删除分支  
 ```
