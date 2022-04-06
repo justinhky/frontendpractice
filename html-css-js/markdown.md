@@ -76,6 +76,11 @@ markdown语法可以用两种方法缩进：
 [alt超链接名](超链接地址url "超链接title")
 ```
 title可加可不加，Markdown本身语法不支持链接在新页面中打开
+1. 文内跳转实现方法——html标签实现
+```
+定义一个锚(id)： <span id="jump">跳转到的地方</span>
+使用markdown语法：[点击跳转](#jump)
+```
 
 ### 4. 列表语法
 
