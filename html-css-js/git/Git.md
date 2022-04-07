@@ -125,7 +125,7 @@ git push <远程主机名> <本地分支名>”  //如果本地分支名与远�
 
 #### 第一次push
 1. 推送分支到远程库
-==分支推送顺序的写法是<来源地>:<目的地>，所以注意区分git pull和git push==
+注意：**分支推送顺序的写法是<来源地>:<目的地>，所以注意区分git pull和git push**.
 ```
 git push <远程主机名> <本地分支名>:<远程分支名>
 ```
@@ -231,8 +231,8 @@ git reflog
 git reset  
 ```
 git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。  
-git reset不会产生commit，它仅仅更新一个branch指向另外一个commit。 
-2. 返回上一个版本 
+git reset不会产生commit，它仅仅更新一个branch指向另外一个commit。  
+2. 返回上一个版本
 ```
 git reset --hard HEAD^  
 ```
@@ -249,7 +249,7 @@ git revert
 git checkout -- filepathname  //放弃单个文件的修改
 git check out . //放弃所有文件的修改  
 ```
-此命令用来放弃掉所有还没有加入到缓存区(就是 git add 命令)的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。
+此命令用来放弃掉所有还没有加入到缓存区(就是 git add 命令)的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。  
 4.2 已经使用git add缓存了的代码  
 ```
 git reset HEAD filepathname  
@@ -288,7 +288,7 @@ git rm -r <category1>
 
 ### 管理分支
 
-1. b参数表示创建并切换到一个新的分支，相当于下面两个命令 
+1. b参数表示创建并切换到一个新的分支，相当于下面两个命令
 ```
 git checkout -b branch_name
 ```
@@ -302,7 +302,7 @@ git branch
 ```
 3. 从远程仓库拉取一条本地不存在的分支并切换到新分支
 ```
-git checkout -b local_branch_name origin/<remote_branchName> //b参数表示创建并切换到一个新的分支，相当于下面两个命令 
+git checkout -b local_branch_name origin/<remote_branchName> //b参数表示创建并切换到一个新的分支，相当于下面两个命令
 git branch dev  
 git checkout dev  
 ```
@@ -339,7 +339,7 @@ git branch -D name  //强行删除分支
 6. 合并分支
 ```
 git merge --no-ff -m //"merge with no-ff" dev  
-on-ff表示禁用fast forward 
+on-ff表示禁用fast forward
 ```
 7. 查看分支合并图
 ```
