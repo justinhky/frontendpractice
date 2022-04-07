@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>bootstrap notes from Justin</title>
+
+</head>
+
+<body>
+  <h1>Personal notes in learning bootstrap</h1>
+  <h2>install bootstrap</h2>
+  <ol>
+    <li>download it directly</li>
+    <li>use cdn service</li>
+    <li>First link css</li>
+    <li>Secondly, link js</li>
+    <p>because bootstrap require poper to use, so you can choose the bundle of js and poper. if you want seperate service, please take poper cdn prior to js cdn.</p>
+  </ol>
+  <h3>globals</h3>
+  <p>bootstrap uses several globals to improve normalization of cross browser styles.</p>
+  <ol>
+    <li>html5 doctype</li>
+    <li>responsive meta tag</li>
+    <li>box-sizing is defaulted to border-box. for special application, like google map, please take revision on the widget with "content-box"</li>
+    <li>reboot function to improve consistencies across browsers and devices</li>
+  </ol>
+  <h3>supported browsers</h3>
+  <p>bootstrap supports the <strong>latest, stable release</strong> of all major browsers and platforms</p>
+  <p>We use <a href="#">Autoprefixer</a> to handle intended browser support via CSS prefixes, which uses <a href="#">Browserslist</a> to manage these browser versions. Consult their documentation for how to integrate these tools into your projects.
+  </p>
+  <p>internet explorer is NOT supported, If you require Internet Explorer support, please use Bootstrap v4.</p>
+  <h2>javascript</h2>
+  <h3>Individual or compiled</h3>
+  <p>Plugins can be included individually (using Bootstrap’s individual js/dist/*.js), or all at once using bootstrap.js or the minified bootstrap.min.js (don’t include both). If you use a bundler (Webpack, Rollup…), you can use /js/dist/*.js files
+    which are UMD ready.</p>
+  <h3>Using Bootstrap as a module in browser if your targeted browsers support it</h3>
+  <h2>RFS-resize font size</h2>
+  <h3>using RFS</h3>
+  <p>The mixins are included in Bootstrap and are available once you include Bootstrap’s scss. RFS can also be installed standalone if needed.</p>
+  <p>The rfs() mixin has shorthands for font-size, margin, margin-top, margin-right, margin-bottom, margin-left, padding, padding-top, padding-right, padding-bottom, and padding-left. See the example below for source Sass and compiled CSS.</p>
+  <!-- rtl is more popular with arabic language -->
+  <h2>RTL</h2>
+  <h3>required HTML</h3>
+  <p>There are two strict requirements for enabling RTL in Bootstrap-powered pages.</p>
+  <ol>
+    <li>Set dir="rtl" on the <html> element.</li>
+    <li>Add an appropriate lang attribute, like lang="ar", on the <html> element.</li>
+  </ol>
+  <p>From there, you’ll need to include an RTL version of our CSS. For example, here’s the stylesheet for our compiled and minified CSS with RTL enabled:</p>
+  <code>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
+  </code>
+  <h2>customize-sass</h2>
+  <h3>importing</h3>
+  <p>In your custom.scss, you’ll import Bootstrap’s source Sass files. You have two options: include all of Bootstrap, or pick the parts you need. The author encourage the latter.</p>
+  <h4>option A</h4>
+  <pre>
+      <code>
+        // Custom.scss
+        // Option A: Include all of Bootstrap
+
+        // Include any default variable overrides here (though functions won't be available)
+
+        @import "../node_modules/bootstrap/scss/bootstrap";
+
+        // Then add additional custom code here
+      </code>
+  </pre>
+  <h4>option B</h4>
+  <pre><code>
+      // Custom.scss
+      // Option B: Include parts of Bootstrap
+
+      // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+      @import "../node_modules/bootstrap/scss/functions";
+
+      // 2. Include any default variable overrides here
+
+      // 3. Include remainder of required Bootstrap stylesheets
+      @import "../node_modules/bootstrap/scss/variables";
+      @import "../node_modules/bootstrap/scss/mixins";
+      @import "../node_modules/bootstrap/scss/root";
+
+      // 4. Include any optional Bootstrap CSS as needed
+      @import "../node_modules/bootstrap/scss/utilities";
+      @import "../node_modules/bootstrap/scss/reboot";
+      @import "../node_modules/bootstrap/scss/type";
+      @import "../node_modules/bootstrap/scss/images";
+      @import "../node_modules/bootstrap/scss/containers";
+      @import "../node_modules/bootstrap/scss/grid";
+      @import "../node_modules/bootstrap/scss/helpers";
+
+      // 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+      @import "../node_modules/bootstrap/scss/utilities/api";
+
+      // 6. Add additional custom code here
+    </code></pre>
+    <h3>colors</h3>
+    <h4>colors classes</h4>
+    <ul>
+      <li>Default</li>
+      <li>Primary</li>
+      <li>Secondary</li>
+      <li>Success</li>
+      <li>Danger</li>
+      <li>Warning</li>
+      <li>Info</li>
+      <li>Light</li>
+      <li>Dark</li>
+    </ul>
+  <h2>layout</h2>
+  <h3>breakpoints</h3>
+  <h4>available breakpoints</h4>
+  <p>Bootstrap includes six default breakpoints, sometimes referred to as grid tiers, for building responsively. These breakpoints can be customized if you’re using our source Sass files.</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Breakpoints</th>
+        <th>Class infix</th>
+        <th>Dimensions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>X-Small</th>
+        <td>None</td>
+        <td>
+          <576px< /td>
+      </tr>
+      <tr>
+        <th>Small</th>
+        <td>sm</td>
+        <td>≥576px</td>
+      </tr>
+      <tr>
+        <th>Medium</th>
+        <td>md</td>
+        <td>≥768px</td>
+      </tr>
+      <tr>
+        <th>Large</th>
+        <td>lg</td>
+        <td>≥992px</td>
+      </tr>
+      <tr>
+        <th>Extra large</th>
+        <td>xl</td>
+        <td>≥1200px</td>
+      </tr>
+      <tr>
+        <th>Extra extra large</th>
+        <td>xxl</td>
+        <td>≥1400px</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Containers</h3>
+  <h4>types of containers in bootstrap</h4>
+  <ul>
+    <li>.container: it's the default container, which sets a max-width at each responsive breakpoint</li>
+    <li>.container-fluid: it's the fluid container, which is 100% width at all breakpoint</li>
+    <li>.container-{breakpoint}: it's the responsive container, which is width: 100% until the specified breakpoint</li>
+  </ul>
+  <h3>Grid</h3>
+  <p>note: it's built with flexbox.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-2">column1</div>
+      <div class="col-6">column2</div>
+      <div class="col-4">column3</div>
+    </div>
+  </div>
+  <h4>column</h4>
+  <p class="note">
+    <strong class="strong">1. core concept: use the attribute or method of a object to define classes for objects, such as items or elements.</strong><br>
+    <strong>2. build customized classes by abbreviations and numbers</strong>
+  </p>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
