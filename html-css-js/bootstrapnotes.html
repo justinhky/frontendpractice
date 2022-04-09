@@ -7,12 +7,59 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style type="text/css">
+.note {
+  padding-top: 1.875rem; /* 30/16 */
+}
+  </style>
   <title>bootstrap notes from Justin</title>
 
 </head>
 
 <body>
   <h1>Personal notes in learning bootstrap</h1>
+  <h2>the mindset in the classcification of classes on bootstrap-personal experience</h2>
+  <p class="note">The main concept of Bootstrap is to categrize different HTML elements, based on their utilities. Then, they will continue to categrize each HTML element based on their features.</p>
+  <ol>
+    <li>base classes or object classes</li>
+    <p>Bootstrap uses the base classes to define the styles of HTML elements in a direct way. Like .table, .grid, .col, .row, etc. They have the common features of visible in HTML</p>
+    <li>opt-in classes</li>
+    <p>the <strong>opt-in classes</strong> are optional modifier classes or custom styles. Because many styles are not inherited in Bootstrap, they utilize the opt-in classes to custom nested elements, such as nested tables. So, they can be independent from the parent.</p>
+    <li>contextual classes</li>
+    <p>Contextual classes are used to tyle "<code>items inside the elements</code>", such as cells inside the table. Usually they style affects like color, fonts, etc.</p>
+    <p>The format is usually <code>"base class-categories"</code>, such as table-primary, table-Secondary, table-success, table-warning, etc</p>
+    <p>By the way, Bootstrap categorizes colors in <strong>primary, Secondary, success, danger, warning, info, light, dark</strong>.</p>
+    <li>variants</li>
+    <p>Bootstrap defined a list of variants for different HTML elements. Some of them are global, while others are used for specified classes. For example, table-striped is usded for striped rows.</p>
+    <table class="table table-succes table-striped">
+      <tr>
+        <th>#</th>
+        <th>First</th>
+        <th>Last</th>
+        <th>Handle</th>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>Larry the Bird</td>
+        <td> </td>
+        <td>@twitter</td>
+      </tr>
+    </table>
+    <li>utilites style classes</li>
+    <p>You can learn this concept via <code>.border-primary</code>. This <code>primary </code>variant is from a kind of class utilites. This is very helpful in assigning different style block.</p>
+  </ol>
   <h2>install bootstrap</h2>
   <ol>
     <li>download it directly</li>
@@ -162,9 +209,9 @@
   <h3>Containers</h3>
   <h4>types of containers in bootstrap</h4>
   <ul>
-    <li>.container: it's the default container, which sets a max-width at each responsive breakpoint</li>
-    <li>.container-fluid: it's the fluid container, which is 100% width at all breakpoint</li>
-    <li>.container-{breakpoint}: it's the responsive container, which is width: 100% until the specified breakpoint</li>
+    <li><code>.container</code>: it's the default container, which sets a max-width at each responsive breakpoint</li>
+    <li><code>.container-fluid</code>: it's the fluid container, which is 100% width at all breakpoint</li>
+    <li><code>.container-{breakpoint}</code>: it's the responsive container, which is width: 100% until the specified breakpoint</li>
   </ul>
   <h3>Grid</h3>
   <p>note: it's built with flexbox.</p>
@@ -180,6 +227,72 @@
     <strong class="strong">1. core concept: use the attribute or method of a object to define classes for objects, such as items or elements.</strong><br>
     <strong>2. build customized classes by abbreviations and numbers</strong>
   </p>
+  <h4>table css classes</h4>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>class type</th>
+      <th>class name</th>
+    </thead>
+    <tr>
+      <th>1</th>
+      <td>base class</td>
+      <td><code>.table</code></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>contextual color class</td>
+      <td><code>.table-primary, .table-Secondary, .table-success, .table-danger, .table-warning, .table-info, .table-light, .table-dark</code></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>contextual table class</td>
+      <td><code>.table-responsive, .table-striped, .table-hover, .table-active, .table-bordered, .table-borderless, .table-sm</code></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>utilities style class</td>
+      <td><code>.primary, .secondary, .success, .danger, .warning, .info, .light, .dark</code></td>
+    </tr>
+  </table>
+  <h4>figure css classes</h4>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>class type</th>
+      <th>class name</th>
+    </thead>
+    <tr>
+      <th>1</th>
+      <td>base class</td>
+      <td><code>.figure, .figure-caption</code></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>contextual figure class</td>
+      <td><code>.figure-img, .figure-caption</code></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>utilites style class</td>
+      <td><code>.figure-fluid, .rounded</code></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>text utilites style class</td>
+      <td><code>.text-end, .text-start, .text-center</code></td>
+    </tr>
+  </table>
+  <h2>forms</h2>
+  <h3>form control</h3>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+    <input type="email" class="form-control" placeholder="name@example.com" id="exampleFormControlInput1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example Textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
