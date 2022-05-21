@@ -648,3 +648,20 @@ dialog标签表示一个可以关闭的对话框。
 ### details, summary
 details标签用来折叠内容，浏览器会折叠显示该标签的内容。用户点击这段文本，折叠的文本就会展开，显示详细内容。  
 summary标签用来定制折叠内容的标题。
+
+
+## tampermonkey简易代码模板
+```
+(function() {
+    'use strict';
+
+    // Your code here...
+    var css = "#wrapper { background: #faf9de; }"
+    var cssfont = "#content { font-family: 宋体; }"
+var style = document.createElement("style");
+style.type = "text/css";
+style.appendChild(document.createTextNode(css));
+style.appendChild(document.createTextNode(cssfont));
+document.head.appendChild(style);
+})();
+```
